@@ -1,24 +1,10 @@
-# README
+# rails の
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* 予約機能
 
-Things you may want to cover:
+* 予約時間の限定 
 
-* Ruby version
+* 地図の埋め込み
 
-* System dependencies
+* QRコード
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
