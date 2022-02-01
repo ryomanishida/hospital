@@ -12,9 +12,8 @@
 
 ActiveRecord::Schema.define(version: 2022_01_31_103955) do
 
-  create_table "orders", force: :cascade do |t|
+  create_table "orders", primary_key: "order_number", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "number"
     t.string "memo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

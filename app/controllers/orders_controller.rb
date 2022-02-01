@@ -1,9 +1,14 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: %i[ show edit update destroy ]
 
+  def search
+    @users = User.search(params[:num]) # viewからの値をモデルへ流す
+    @orders = Order.all
+  end
+
   # GET /orders or /orders.json
   def index
-    @orders = Order.all
+  
   end
 
   # GET /orders/1 or /orders/1.json

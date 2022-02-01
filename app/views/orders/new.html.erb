@@ -1,5 +1,15 @@
-<h1>順番待ち状況</h1>
+<%= form_with(model: @order, local: true) do |f| %>
+  <%= render 'form', order: @order %>
 
-<%= render 'form', order: @order %>
+  <h3>診察番号</h3>
+  <div class="field">
+    <%= f.label :user_id %>
+    <%= f.text_field :user_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "番号発行" %>
+  </div>
+<% end %>
 
 <%= link_to 'Back', orders_path %>

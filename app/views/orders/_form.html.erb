@@ -1,33 +1,11 @@
-<%= form_with(model: order, local: true) do |form| %>
-  <% if order.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
+<% if order.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
 
-      <ul>
-      <% order.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-  <p>↓診察番号</p>
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div>
-
-  <div class="field">
-    <p>↓順番番号自動発行する</p>
-    <%= form.label :number %>
-    <%= form.number_field :number %>
-  </div>
-
-  <div class="field">
-    <%= form.label :memo %>
-    <%= form.text_field :memo %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+    <ul>
+    <% order.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
   </div>
 <% end %>
