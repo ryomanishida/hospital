@@ -79,11 +79,40 @@
 
     <hr class="featurette-divider">
 
+
+    <h2>アクセス</h2>
+    <div id='map'></div>
+
+    <style>
+    #map{
+      height: 400px;
+    }
+    </style>
+
+    <script>
+    function initMap(){
+      let map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: 34, lng: 131},
+        zoom: 8
+      });
+      
+// ピンを立てたい
+      let marker = new google.maps.Marker({ 
+          map: map,
+          position: results[0].geometry.location
+      });
+    }
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlELpgLW45x4EPz5RHCI8RlkCFJcbAzkY&callback=initMap" async defer></script>
+
+
+
   </div><!-- /.container -->
 </main>
 
 <footer>
   <div class="ml-5 mb-5">
-    <%= link_to "管理者ページ", users_path %>
+    <%= link_to "管理者ページ", orders_path %>
   </div>
 </footer>

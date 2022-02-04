@@ -1,19 +1,2 @@
-<p id="notice"><%= notice %></p>
+<h1>あなたの予約番号は<%= @order.id %>番です。番号を控えて、５番前には受付にいらしてください。</h1>
 
-<p>
-  <strong>User:</strong>
-  <%= @order.user %>
-</p>
-
-<p>
-  <strong>Number:</strong>
-  <%= @order.number %>
-</p>
-
-<p>
-  <strong>Memo:</strong>
-  <%= @order.memo %>
-</p>
-
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>

@@ -1,11 +1,6 @@
 class User < ApplicationRecord
+  # belongs_to :order
 
-  def self.search(num)
-    if num
-      User.where(["id like?", "%#{num}%"])
-    else
-      User.all
-    end
-  end
+
 
 end
