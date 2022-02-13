@@ -1,34 +1,41 @@
 <%= render 'layouts/nav' %>
 
+<div class="container mt-3">
+  <h1>順番待ち状況</h1>
+  <h5>
+    <font color="red">自分の順番の5番前には受付にいらしてください</font>
+  </h5>
 
-<p id="notice"><%= notice %></p>
-
-<h1>順番待ち状況</h1>
-
-<table class="table">
-  <thead class="thead-light">
-    <tr>
-      <th>順番待ち番号</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @orders.each do |order| %>
+  <table class="table">
+    <thead class="thead-light">
       <tr>
-        <td><%= order.id %></td>
+        <th>順番待ち</th>
+        <th>予約番号</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @orders.each_with_index do |order, i| %>
+        <tr>
+          <td><%= i + 1 %></td>
+          <td><%= order.id %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
 
-<hr>
-<%= link_to '予約を取る', new_order_path %>
-<br>
-<hr>
-<h5>順番待ち番号を確認するには診察券番号を入力してください</h5>
-<!--form_tagはDBの変更に関わらない時に使うとよい-->
-<%= form_tag(search_path,:method => 'get') do %>
-  <%= text_field_tag :num %>
-  <%= submit_tag '確認する', :name => nil %>
-<% end %>
+  <hr>
+  <%= link_to '予約を取る', new_order_path %>
+  <br>
+  <hr>
+  <%= link_to '予約を取り消す', new_order_path %>
+  <br>
+  <hr>
+  <h5>順番待ち番号を確認するには診察券番号を入力してください</h5>
+  <!--form_tagはDBの変更に関わらない時に使うとよい-->
+  <%= form_tag(search_path,:method => 'get') do %>
+    <%= text_field_tag :num %>
+    <%= submit_tag '確認する', :name => nil %>
+  <% end %>
+</div>

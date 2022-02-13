@@ -1,23 +1,27 @@
 <%= render 'layouts/admin_nav' %>
-<table class="table">
-  <thead class="thead-light">
-    <tr>
-      <th scope="col">順番待ち番号</th>
-      <th scope="col">名前</th>
-      <th scope="col">診察券番号</th>
-      <th scope="col">患者詳細</th>
-      <th scope="col"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @orders.each do |order| %>
+<div class="container">
+  <table class="table">
+    <thead class="thead-light">
       <tr>
-        <td><%= order.id %></td>
-        <td><%= order.name %></td>
-        <td><%= order.user_id %></td>
-        <td>user/showへのリンク</td>
-        <td><%= link_to '削除', order, method: :delete, data: { confirm: 'この患者の予約を削除します。本当によろしいですか?' } %></td>
+        <th scope="col">No.</th>
+        <th scope="col">予約番号</th>
+        <th scope="col">名前</th>
+        <th scope="col">診察券番号</th>
+        <th scope="col">患者詳細</th>
+        <th scope="col"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @orders.each_with_index do |order, i| %>
+        <tr>
+          <td><%= i + 1 %></td>
+          <td><%= order.id %></td>
+          <td><%= order.name %></td>
+          <td><%= order.user_id %></td>
+          <td>user/showへのリンク</td>
+          <td><%= link_to '削除', order, method: :delete, data: { confirm: 'この患者の予約を削除します。本当によろしいですか?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
