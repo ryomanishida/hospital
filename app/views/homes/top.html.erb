@@ -3,7 +3,7 @@
 <main role="main">
   <div class="carousel-inner">
     <div class="carousel-item active">
-        <%= image_tag '22634469_l.jpg', :size => '1900x500' %>
+        <%= image_tag '22634469_l.jpg', class: "top-image-size" %>
     </div>
   </div>
 
@@ -11,15 +11,15 @@
     <h3 class= "category">皮膚科一般治療</h3>
     <div class="row">
       <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+        <%= image_tag 'sissinn.jpeg', class: "image-trim" %>
         <h4>湿疹</h4>
       </div>
       <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+        <%= image_tag 'atopi.jpeg', class: "image-trim" %>
         <h4>アトピー</h4>
       </div>
       <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+        <%= image_tag 'nikibi.webp', class: "image-trim" %>
         <h4>ニキビ</h4>
       </div>
     </div>
@@ -27,15 +27,15 @@
     <h3 class= "category mt-5">実費診療</h3>
     <div class="row">
       <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+        <%= image_tag 'pi-ring.jpeg', class: "image-trim" %>
         <h4>ピーリング</h4>
       </div>
       <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+        <%= image_tag 'simi.jpeg', class: "image-trim" %>
         <h4>シミ治療</h4>
       </div>
       <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+        <%= image_tag 'datumou.jpeg', class: "image-trim" %>
         <h4>脱毛</h4>
       </div>
     </div>
@@ -43,7 +43,7 @@
 
     <hr class="featurette-divider">
 
-    <div class="row featurette">
+    <div class="row featurette" id="about">
       <div class="col-md-7">
         <h4 class="featurette-heading">あらゆる年齢の皮膚トラブルに対応いたします。</h4>
         <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
@@ -95,9 +95,9 @@
         center: {lat: 34, lng: 131},
         zoom: 8
       });
-      
+
 // ピンを立てたい
-      let marker = new google.maps.Marker({ 
+      let marker = new google.maps.Marker({
           map: map,
           position: results[0].geometry.location
       });
